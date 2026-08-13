@@ -37,7 +37,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ledgerz",
-    title: "LedgerZ",
+    title: "LEDGERZ",
     teaser:
       "A ledger where the person who submits an entry can never approve it.",
     problem:

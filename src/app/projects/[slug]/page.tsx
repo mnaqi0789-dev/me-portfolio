@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import { projects } from "@/lib/data";
 
 export function generateStaticParams() {
@@ -21,7 +22,20 @@ export default async function ProjectPage({ params }: { params: Params }) {
       <Link href="/#projects" className="text-sm text-text-muted hover:text-text">
         &larr; Back to projects
       </Link>
-      <h1 className="font-serif text-3xl text-text mt-4">{project.title}</h1>
+
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
+        <h1 className="font-serif text-3xl text-text">{project.title}</h1>
+        
+          href={project.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 font-mono text-xs text-text-muted hover:border-accent hover:text-accent transition-colors"
+        >
+          <ExternalLink size={13} />
+          Live site
+        </a>
+      </div>
+
       <div className="mt-3 flex flex-wrap gap-2">
         {project.stack.map((item) => (
           <span

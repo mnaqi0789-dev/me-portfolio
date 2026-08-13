@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import type { Project } from "@/lib/data";
 
 const fileNames: Record<string, string> = {
@@ -10,10 +10,7 @@ const fileNames: Record<string, string> = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link
-      href={`/projects/${project.slug}`}
-      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface hover:border-accent transition-colors"
-    >
+    <div className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface hover:border-accent transition-colors">
       <div className="flex items-center gap-2 border-b border-border px-4 py-3">
         <span className="h-2 w-2 rounded-full bg-slate-300" />
         <span className="h-2 w-2 rounded-full bg-slate-300" />
@@ -23,7 +20,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
+      <Link href={`/projects/${project.slug}`} className="flex flex-1 flex-col p-5">
         <div className="flex items-start justify-between gap-3">
           <h3 className="min-w-0 font-mono text-base break-words text-text">{project.title}</h3>
           <ArrowUpRight
@@ -39,7 +36,17 @@ export default function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
-      </div>
-    </Link>
+      </Link>
+
+      
+      <a  href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1.5 border-t border-border px-5 py-3 font-mono text-xs text-text-muted hover:text-accent transition-colors"
+      >
+        <ExternalLink size={13} />
+        Live site
+      </a>
+    </div>
   );
 }

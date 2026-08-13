@@ -1,6 +1,3 @@
-export const gmailComposeUrl =
-  "https://mail.google.com/mail/?view=cm&fs=1&to=mnaqi0789@gmail.com";
-
 export type Project = {
   slug: string;
   title: string;
@@ -10,6 +7,7 @@ export type Project = {
   howItWorks: string;
   tradeoff: string;
   stack: string[];
+  liveUrl: string;
 };
 
 export const projects: Project[] = [
@@ -34,6 +32,7 @@ export const projects: Project[] = [
       "JWT",
       "Google OAuth",
     ],
+    liveUrl: "https://authbynaqi.netlify.app/login",
   },
   {
     slug: "ledgerz",
@@ -49,6 +48,7 @@ export const projects: Project[] = [
     tradeoff:
       "No refresh-token rotation — a single 1-day JWT is the whole session model here — plus no OAuth, no multi-currency, no file attachments on entries. The point of this build was the approval workflow, not a full accounting suite, so I stopped there on purpose.",
     stack: ["Node.js", "Express 5", "Prisma", "PostgreSQL", "JWT", "Zod"],
+    liveUrl: "https://ledgerzbynaqi.netlify.app/",
   },
   {
     slug: "blogz",
@@ -64,6 +64,7 @@ export const projects: Project[] = [
     tradeoff:
       "No real roles, no multi-author accounts — it's a binary admin-or-demo split. That's deliberate: this is a one-author blog, not a CMS built for a team, so a full permissions system would just be overhead for a problem I don't have.",
     stack: ["Next.js", "Firebase Auth", "Firestore", "TipTap"],
+    liveUrl: "https://blogzbynaqi.netlify.app",
   },
 ];
 
@@ -113,3 +114,6 @@ export const stackGroups = [
 
 export const stackNote =
   "Comfortable picking up new tools fast and working straight from official docs when something's unfamiliar.";
+
+export const gmailComposeUrl =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=mnaqi0789@gmail.com";

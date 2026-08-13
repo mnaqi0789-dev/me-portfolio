@@ -26,7 +26,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
       <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
         <h1 className="font-serif text-3xl text-text">{project.title}</h1>
         
-          href={project.liveUrl}
+        <a  href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 font-mono text-xs text-text-muted hover:border-accent hover:text-accent transition-colors"

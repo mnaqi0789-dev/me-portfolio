@@ -4,10 +4,10 @@ import SectionLabel from "@/components/SectionLabel";
 export default function About() {
   return (
     <section id="about" className="border-b border-border">
-      <div className="mx-auto max-w-[1100px] px-6 py-20 lg:py-28">
+      <div className="mx-auto max-w-5xl px-6 py-20">
         <Reveal>
           <SectionLabel index="01" title="about" />
-          <p className="mt-8 max-w-2xl text-[0.95rem] text-muted-foreground">
+          <p className="mt-8 max-w-2xl text-text-muted leading-relaxed">
             I&apos;m self-taught, based in Karachi. I mostly work in TypeScript — Node/Express and
             Next.js on the frontend, Prisma/Postgres or Firebase depending on the job. I don&apos;t
             move on from a project once it &quot;works&quot; — I go back and ask what breaks it,

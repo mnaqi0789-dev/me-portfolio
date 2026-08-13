@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -24,14 +25,19 @@ export const metadata: Metadata = {
   description: "Full-stack developer. Auth systems, approval workflows, admin dashboards.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+type Props = { children: React.ReactNode };
+
+export default async function RootLayout({ children }: Props) {
+  const cookieStore = await cookies();
+  const isDark = cookieStore.get("theme")?.value === "dark";
+
   return (
     <html
       lang="en"
-      className={`${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable} h-full`}
+      className={`${isDark ? "dark" : ""} ${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col font-sans antialiased">
-        <Navbar />
+        <Navbar isDark={isDark} />
         <main className="flex-1 flex flex-col pt-16">{children}</main>
         <Footer />
       </body>

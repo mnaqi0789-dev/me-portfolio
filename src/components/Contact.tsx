@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
 import Reveal from "@/components/Reveal";
 import SectionLabel from "@/components/SectionLabel";
 import { gmailComposeUrl } from "@/lib/data";
@@ -6,19 +7,19 @@ import { gmailComposeUrl } from "@/lib/data";
 const contactLinks = [
   { label: "Email", value: "mnaqi0789@gmail.com", href: gmailComposeUrl, icon: Mail },
   { label: "WhatsApp", value: "+92 336 3266298", href: "https://wa.me/923363266298", icon: MessageCircle },
-  { label: "GitHub", value: "mnaqi0789-dev", href: "https://github.com/mnaqi0789-dev", icon: Github },
+  { label: "GitHub", value: "mnaqi0789-dev", href: "https://github.com/mnaqi0789-dev", icon: GithubIcon },
   {
     label: "LinkedIn",
     value: "muhammad-naqi",
     href: "https://www.linkedin.com/in/muhammad-naqi-251a77429/",
-    icon: Linkedin,
+    icon: LinkedinIcon,
   },
 ];
 
 export default function Contact() {
   return (
     <section id="contact">
-      <div className="mx-auto max-w-[1100px] px-6 py-20 lg:py-28">
+      <div className="mx-auto max-w-5xl px-6 py-20">
         <Reveal>
           <SectionLabel index="04" title="contact" />
         </Reveal>
@@ -27,18 +28,18 @@ export default function Contact() {
             const Icon = link.icon;
             return (
               <Reveal key={link.label} delay={i * 0.05}>
-                <a
-                  href={link.href}
+                
+                <a  href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="surface-card flex h-full items-start gap-3 rounded-lg p-5"
+                  className="flex h-full items-start gap-3 rounded-lg border border-border bg-surface p-5 hover:border-accent transition-colors"
                 >
-                  <Icon size={16} className="mt-1 shrink-0 text-faint" />
+                  <Icon size={16} className="mt-1 shrink-0 text-text-faint" />
                   <span className="flex min-w-0 flex-col gap-1">
-                    <span className="font-mono text-[0.7rem] tracking-[0.14em] text-faint uppercase">
+                    <span className="font-mono text-[0.7rem] tracking-[0.14em] text-text-faint uppercase">
                       {link.label}
                     </span>
-                    <span className="font-mono text-sm break-all text-foreground">{link.value}</span>
+                    <span className="font-mono text-sm break-all text-text">{link.value}</span>
                   </span>
                 </a>
               </Reveal>

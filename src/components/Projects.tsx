@@ -6,7 +6,7 @@ import { projects } from "@/lib/data";
 export default function Projects() {
   return (
     <section id="projects" className="border-b border-border">
-      <div className="mx-auto max-w-[1100px] px-6 py-20 lg:py-28">
+      <div className="mx-auto max-w-5xl px-6 py-20">
         <Reveal>
           <SectionLabel index="02" title="projects" />
         </Reveal>

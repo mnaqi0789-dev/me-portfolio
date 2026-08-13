@@ -7,6 +7,17 @@
   --border: #e2e8f0;
   --text: #0f172a;
   --text-muted: #64748b;
+  --text-faint: #94a3b8;
+}
+
+.dark {
+  --accent: #3b82f6;
+  --bg: #0b1120;
+  --surface: #111827;
+  --border: #1f2937;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
 }
 
 @theme inline {
@@ -16,6 +27,7 @@
   --color-border: var(--border);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
   --font-serif: var(--font-newsreader);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains);
@@ -28,8 +40,30 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif), serif;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.4;
+}
+
+.caret {
+  display: inline-block;
+  width: 7px;
+  height: 1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }

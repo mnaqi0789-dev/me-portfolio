@@ -1,3 +1,6 @@
+export const gmailComposeUrl =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=mnaqi0789@gmail.com";
+
 export type Project = {
   slug: string;
   title: string;
@@ -69,6 +72,7 @@ export const stackGroups = [
   {
     label: "Frontend",
     items: [
+      "React",
       "Next.js 16",
       "Tailwind CSS",
       "shadcn/ui",
@@ -96,10 +100,16 @@ export const stackGroups = [
       "morgan",
     ],
   },
-  { label: "Database", items: ["PostgreSQL (Neon)", "Firebase Firestore"] },
+  {
+    label: "Database",
+    items: ["PostgreSQL (Neon)", "MongoDB", "Firebase Firestore"],
+  },
   {
     label: "Auth",
     items: ["JWT (access/refresh rotation)", "Google OAuth", "Firebase Auth"],
   },
-  { label: "Hosting / DevOps", items: ["Vercel", "Netlify", "Docker"] },
+  { label: "Hosting / DevOps", items: ["Vercel", "Netlify"] },
 ];
+
+export const stackNote =
+  "Comfortable picking up new tools fast and working straight from official docs when something's unfamiliar.";
